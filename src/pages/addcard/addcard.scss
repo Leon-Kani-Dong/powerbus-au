@@ -1,0 +1,33 @@
+page-addcard {
+    .cardinfo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .toolar-bottom{
+        justify-content: center;
+        flex-direction: column;
+        height: 70px !important;
+        bottom: 0 !important;
+        p{
+            margin-top: 5px !important;
+        }
+    }
+    ion-card{
+        border-radius: 20px !important;
+        background-color: #263719 !important;
+      }
+      .text-input::-moz-placeholder {
+        color: #fff;
+      }
+      
+      .text-input:-ms-input-placeholder {
+        color: #fff;
+      }
+      
+      .text-input::-webkit-input-placeholder {
+        color: #fff;
+      }
+
+}

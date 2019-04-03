@@ -1,0 +1,22 @@
+<ion-header>
+        <ion-navbar hideBackButton="true">
+          <ion-title >
+          <div class="color-01"> SCAN QR CODE</div>
+          </ion-title>  
+          <ion-icon name="close" class="btn-close pointer color-01" (click)="goback()"></ion-icon>
+        </ion-navbar>
+      </ion-header>
+
+<ion-content no-scroll [ngClass]="{'qrscanner':isShow}" >
+  <div [ngClass]="{'qrscanner-area':isShow}">    
+  </div> 
+   <div  [ngClass]="{'through-line':isShow}"></div>
+  <div class="button-bottom">
+      <button  (click)="toggleLight()" ion-fab class="icon-camera" margin-right>
+          <ion-icon name="flash"></ion-icon>                  
+      </button>
+      <button (click)="gotoEnterCode()" ion-fab class="icon-camera">
+            <ion-icon name="keypad"></ion-icon>                 
+      </button>
+  </div> 
+</ion-content>

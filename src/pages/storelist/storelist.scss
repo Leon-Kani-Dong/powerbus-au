@@ -1,0 +1,74 @@
+page-storelist {
+    ion-card{
+        position: relative;
+        z-index: 1;
+        border-top: 0px ;
+         
+    }
+
+    ion-card-header{
+        display: flex;
+
+        .loc-titicon{
+            position: absolute;
+            left: 4%;
+            top: 10%;
+            z-index: 2;
+        }
+    
+        .loc-titinfo{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+    
+            .infomod{
+                display: flex;
+                align-items: center;
+                
+                img{
+                    width: 14px;
+                }
+
+                .number{
+                    margin: 0 5%;
+                }
+            }
+            
+        }
+    }
+
+    ion-card-content{
+        //padding: 5% 5% 5% 15% !important;
+        border-top: 0px solid #ccc;
+        font-size: 10px;
+        // @media (min-width:450px) {
+        //     padding: 5% 5% 5% 6% !important;
+        // }
+        // @media (max-width:321px) {
+        //     padding: 5% 5% 5% 18% !important;
+        // }
+
+        .loc-coninfobar{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 12px;
+            color: #868686;
+            margin-bottom: 2%;
+
+            img{
+                width: 14px !important;
+                margin-right: 2%;
+            }
+            .adressnifo{
+                width: 80%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    
+}

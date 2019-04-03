@@ -1,0 +1,58 @@
+<!--
+  Generated template for the AddcardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton="true">
+      <ion-title class="txt-c">
+        <div class="tit-name color-01 ft-16" style="display:inline-block;">ADD CARD</div> 
+      </ion-title>
+      <ion-icon name="close" class="btn-close color-01 pointer" (click)="goback()"></ion-icon>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-card class="br-10 bg-01" id="card">
+      <ion-card-content>
+        <p class="m-n ft-12 color-25">YOUR CARD NUMBER</p>
+        <div class="cardinfo">
+          <img src="../../assets/imgs/creditcard.png" style="width:22px;">
+          <!-- &emsp;<span class="ft-22 ft-b color-14">····</span>
+          &emsp;<span class="ft-22 ft-b color-14">····</span>
+          &emsp;<span class="ft-22 ft-b color-14">····</span>
+          &emsp;<span class="ft-22 ft-b color-14">····</span> -->
+          <input type="tel" maxlength="16"  [(ngModel)]='card.number' placeholder="····&ensp;····&ensp;····&ensp;····" class="b-n full-w bg-01 color-25 text-input ft-14" style="height:22px;padding-left:10px;">
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <div style="display:flex;align-items: center;justify-content: center;"> 
+      <ion-card class="br-10 mt-n" id="card">
+        <ion-card-content>
+          <p class="m-n ft-12 color-25">EXPIRATION DATE</p>
+          <div class="cardinfo">
+            <input type="tel" maxlength="5" (keyup)="addSplash()"  [(ngModel)]='card.exp' placeholder="MM/YY" class="b-n full-w bg-01 color-25 text-input ft-14">
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="br-10" id="card">
+          <ion-card-content>
+            <p class="m-n ft-12 color-25">CVV</p>
+            <div class="cardinfo">
+              <input type="tel" maxlength="3"  [(ngModel)]='card.cvv' placeholder="CVV" class="b-n full-w bg-01 color-25 text-input ft-14">
+            </div>
+          </ion-card-content>
+        </ion-card>
+    </div>
+
+     <!--  底部功能条  -->
+    <div class="toolar-bottom">
+        <button (click)='createCard()' icon-button round class="ft-12 bg-01 color-06 h-35 br-25 w-70per" >DONE</button>
+        <p class="ft-10 txt-c color-13 mt-5">* SSL is enabled for this transaction.</p>
+    </div>
+  </ion-content>

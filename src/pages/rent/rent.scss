@@ -1,0 +1,26 @@
+page-rent {
+    .pricebox{
+        border-radius: 10px;
+        width: 80%;
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        margin-left: -40%;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      
+        .ad-area{
+            width: 100%;
+            .priceinfo{
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+            }
+            img{
+                width: 36px !important;
+            }
+        }
+      }
+}

@@ -1,0 +1,80 @@
+page-wallet {
+    .balance{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .balancetit{
+            @media (max-width:320px) {
+                margin: 0 !important;
+            }
+            
+        }
+        .addnum{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            button{
+                border-color:#9da695;
+                height:34px;
+                border-radius: 20px;
+                color: #515f47;
+                font-size: 20px;
+                @media (max-width:320px) {
+                    width: 30%;
+                    font-size: 16px;
+                }
+            }
+            button:hover{
+                background-color: #fff !important;
+                border-width: 2px;
+                font-size: 22px;
+                font-weight: bold;
+                height: 38px;
+                @media (max-width:320px) {
+                    font-size: 18px;
+                }
+            }
+            button:active , button:visited , button:hover{
+                background-color: #fff !important;
+            }
+
+        }
+    }
+    .btn-wallet{
+        //padding-top: 15%;
+        position: fixed;
+        bottom: 5%;
+        left: 0;
+        height: 100px;
+        display:inline-block;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        button{
+            display: inline-block;
+        }
+        .pay{
+            text-align: center;
+            display:inline-block;
+        align-items: center;
+        flex-direction: row;
+        }
+        .pay button{
+            display: inline-block;
+        }
+    }
+    ion-item .item-inner{
+        border-bottom:0 !important;
+        padding-right: 0;
+        ion-toggle{
+            margin: 0 !important;
+        }
+        ion-toggle{
+            padding: 4px 0px 4px 0px !important;
+        }
+    }
+  
+}

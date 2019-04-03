@@ -1,0 +1,179 @@
+<!--
+  Generated template for the PowermapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content >
+    <div id="div_version" style="visibility: hidden">2.1.1</div>
+  <div class="toolbar-box">
+      <div class="toolbar-top">
+        <!-- <ion-icon name="md-menu" class="color-05 ft-30"></ion-icon> -->
+        <h3 class="color-05 txt-c" style="font-weight: 700;">POWERBUS</h3>
+        <!-- <ion-icon name="ios-headset-outline" class="color-05 ft-30" onclick="window.open('tel:+61280050205', '_system', 'location=yes')"></ion-icon>      -->
+      </div>
+
+      <!-- alertbar 提示栏      start！！！
+          1、alertbar news （未租借  为默认状态 显示提示信息）
+
+          2、alertbar （租借状态  显示租借信息）
+      -->
+
+      <button style="margin-top:20px;" ion-button round class="color-25 bg-01 full-w m-n h-35">
+        <div class="alertbar ft-14 full-h full-w" >
+          <div>There are {{shop_number}} stations nearby</div>
+          <!-- <div><ion-icon name="ios-stopwatch-outline" class="color-05"></ion-icon>&ensp;01h22m</div> -->
+          <div style="align-items: center;text-align:center;vertical-align: middle;display: inline-block;"><ion-icon  class="color-05"><img src="../../assets/imgs/wallet.png" width="16px"></ion-icon><div style="float:right;padding-top:3px">&ensp;${{balance}}</div></div>
+        </div>
+      </button>
+      <!--  alertbar   end！！   -->
+  </div>
+
+
+
+  <!--  首页中部  广告  start！ -->
+  <div class="adbox" *ngIf="adHide">
+    <div class="ad-area">
+      <img src="../../assets/imgs/ad.png">
+    </div>
+    <ion-icon name="close-circle" class="mt-10 ft-30 color-07" (click)="BoxHide()"></ion-icon>
+  </div>
+  <!--  首页中部  广告  end！ -->
+
+
+ <!--  输入ID区域 start  -->
+ <div class="pricebox bg-02 p-15" style="display:none;" id="enterCode">
+    <ion-icon  style="font-size: 16px; " name="close" class="btn-close pointer" (click)="closeRentPop()"></ion-icon>
+    <div class="id-box">
+      <p class="mb-15 txt-c color-20 ft-14">
+        Please Enter the Device ID
+    </p>
+      <input type="tel" maxlength="8" [(ngModel)]="current_bankId" placeholder="190*****" class="txt-c color-20 ft-14" style="margin-bottom:56px;">
+      <!-- <p class=" txt-c color-18 ft-10">资费标准：$1/1Hour,$2/2Hour,$3/3Hour,选择充电时长即
+        扣取相应时长资费，使用完成请立即归还。</p> -->
+    </div>
+  </div>
+  <!--  输入ID区域 end  -->
+
+<!--  选择充电时长 start  -->
+<div class="pricebox bg-02 p-15" style="display:none;" id="selectPlan">
+    <ion-icon name="close" style="font-size: 16px; " class="btn-close pointer" (click)="closeRentPop()"></ion-icon>
+  <div class="id-box">
+    <p class="mb-15 txt-c color-20 ft-14">
+      CHOOSE A CHARGING PLAN
+    </p>
+    <div class="addnum">
+      <button ion-button outline (click)="choosePlan(1)">1 HOUR</button>
+      <button ion-button outline (click)="choosePlan(2)">2 HOUR</button>
+      <button ion-button outline (click)="choosePlan(3)">3 HOUR</button>
+    </div>
+    <p class=" txt-c color-18 ft-10">$1 Per Hour, please return to the station when finish charging.</p>
+  </div>
+</div>
+<!--  选择充电时长 end  -->
+
+<!--  支付成功 start  -->
+<div class="pricebox bg-02 p-15 mt-4" style="display:none;">
+  <div class="id-box">
+    <div class="bb-1 pb-10">
+      <p class="m-n txt-c"><ion-icon name="checkmark" class="ft-40 ft-b"></ion-icon></p>
+      <p class="m-n txt-c color-22 ft-14">支付成功</p>
+    </div>
+    <p class="ft-30 color-05 txt-c" style="margin:10px 0 0 0 ;">{{password}}</p>
+    <p class=" txt-c color-18 ft-10">
+      温馨提示：请在充电宝上输入获取的密码解锁充电宝进行充电，密码有效期为{{choosed_plan}}小时，请及时使用！
+    </p>
+  </div>
+</div>
+<!--  支付成功 end  -->
+
+<!--  获取密码失败 start  -->
+<div class="pricebox bg-02 p-15 mt-4" style="display:none;">
+  <div class="id-box">
+    <div class="bb-1 pb-10">
+      <p class="m-n txt-c"><ion-icon name="close" class="ft-40 ft-b"></ion-icon></p>
+      <p class="ft-14 color-22 txt-c m-n">密码获取失败</p>
+    </div>
+    <p class=" txt-c color-18 ft-10" style="margin: 30px 0 40px 0;">
+      温馨提示：请重新尝试支付获取密码，请保持账户内有足够的金额进行租借。
+    </p>
+  </div>
+</div>
+<!--  获取密码失败 end  -->
+
+<!--  使用中 start  -->
+<div class="infobox bg-02 p-15 mt-4" style="display:none;" id="using">
+  <div class="id-box">
+    <p class="ft-14 color-23 txt-c m-n mb-5 ft-b">IN USE</p>
+    <img src="../../assets/imgs/ionic-23.png" width="90" style="display: flex;margin: 0 auto;">
+    <p class="ft-10 color-24 txt-c"> Please enter the code using the keyboards to unlock the power bank and start charging.</p>
+    <div class="usinginfo"> 
+      <div class="full-w">
+        <!-- <ion-icon name="calculator" class="ft-30"></ion-icon> -->
+        <img src="../../assets/imgs/password.png" class="ft-30" style="width:25px;" >
+        <p class="color-18 ft-12">Your Password</p>
+        <p class="ft-24 color-18 m-n ft-b">{{password}}</p>
+      </div>
+      <div class="full-w">
+        <!-- <ion-icon name="alarm" class="ft-30"></ion-icon> -->
+        <img src="../../assets/imgs/time.png" class="ft-30" style="width:25px;" >
+        <p class="color-18 ft-12">Remaining Time</p>
+        <p class="ft-24 color-18 m-n ft-b">{{left_time}}</p>
+      </div>
+    </div>
+    <p class="ft-12 color-23 txt-c">Finish Charging?</p>
+    <img src="../../assets/imgs/ionic-24.png" width="90" style="display: flex;margin: 0 auto;">
+    <p class=" txt-c color-24 ft-10" >
+      To return, please put the power
+      bank back to the power station as shown in the picture.                           
+    </p>
+    <div class="using-bottom">
+    <button ion-button class="btn-sm-using1 bg-01 color-25 p-n m-n" (click)="startNewCharge()"><ion-icon name="add" class="color-25 ft-16"></ion-icon></button>
+    <button (click)="returnNow()" [disabled]="usingbuttondisable"  icon-button round class="ft-12 bg-01 color-06 h-35 br-25 w-70per" style="display: flex;justify-content: center;margin: 0 auto;">{{usingbuttoncontent}}<div  [style.display]="spinner_display_using"><ion-spinner icon="ios-small" ></ion-spinner></div></button>
+    <button ion-button class="btn-sm-using2 bg-01 color-25 p-n m-n" (click)="chat()"><ion-icon name="help" class="color-25 ft-20"></ion-icon></button>
+    </div>
+  </div>
+</div>
+<!--  使用中 end  -->
+
+<!--  归还 start  -->
+<div class="infoboxforreturn bg-02 p-15 mt-4" style="display:none;" id="finish">
+  <div class="id-box">
+    <p class="ft-14 color-23 txt-c m-n mb-5 ft-b">TIME'S UP</p>
+    <img src="../../assets/imgs/ionic-24.png" width="150" style="display: flex;margin: 10% auto;">
+    <p class="ft-10 color-24 txt-c ft-b"> 
+      Please return the power bank to the power station.Thanks for using PowerBus!
+    </p>
+    <p class=" txt-c color-24 ft-10" style="margin-top:15%;">
+       *If already returned, please click “START A NEW CHARGE” and it will take you back to the homepage!                                                
+    </p>
+    <button [disabled]="returnbuttondisable" icon-button round class="ft-12 bg-01 color-06 h-35 br-25 w-70per" style="display: flex;justify-content: center;margin: 0 auto;" (click)="finishRenting()">{{returnbuttoncontent}}<div  [style.display]="spinner_display_return"><ion-spinner icon="ios-small" ></ion-spinner></div></button>
+  </div>
+</div>
+<!--  归还 end  -->
+
+
+
+
+  <!--  底部功能条  -->
+  <div class="toolar-bottom">
+    <button ion-button class="btn-sm bg-01 color-25 p-n m-n" (click)="back2UserPosition()"><ion-icon name="ios-pin-outline" class="color-25 ft-16"></ion-icon></button>
+  <button [disabled]="homebuttondisable" id="homePageButton" icon-button round class="ft-12 bg-01 color-06 h-35 br-25 w-70per" (click)="homePageButton(homeButtonType)">{{homebuttoncontent}}<div  [style.display]="spinner_display"><ion-spinner icon="ios-small" ></ion-spinner></div></button>
+    <!--  右侧功能按钮  -->
+    <div class="btn-box">
+        <ion-fab right bottom class="btn-main">
+            <button ion-fab class="ft-13 bg-01 color-25 btn-sm"><ion-icon name="add" class="ft-13"></ion-icon></button>
+            <ion-fab-list side="top" style="display:flex;min-width:25px;">
+              <button ion-fab class="btn-sm bg-01 color-25" (click)="chat()"><ion-icon name="help" class="ft-20"></ion-icon></button>
+                <!-- <button ion-fab class="btn-sm bg-01 color-25" onclick="window.open('tel:+61280050205', '_system', 'location=yes')"><ion-icon name="ios-headset-outline" class="ft-16"></ion-icon></button> -->
+                <button ion-fab class="btn-sm bg-01 color-25" (click)="goorderhistory()"><ion-icon name="list" class="ft-16"></ion-icon></button>
+                <button ion-fab class="btn-sm bg-01 color-25" (click)="gowallet()"><ion-icon name="card" class="ft-16"></ion-icon></button>
+                <button ion-fab class="btn-sm bg-01 color-25" (click)="logout()"><ion-icon name="ios-power" class="ft-16"></ion-icon></button>
+              </ion-fab-list>
+        </ion-fab>
+    </div>
+  </div>
+  <div id="map"></div>
+</ion-content>

@@ -1,0 +1,36 @@
+<!--
+  Generated template for the PhoneloginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+</ion-header>
+
+<ion-content padding>
+    <!-- <img id="img_ads" style="width: 100%; height: 100%;" style="visibility:visible" > -->
+  <div class="loginbox" style="visibility: hidden;" id="div_login_phone" >
+    <div class="login-tit" style="float:right"> <img src="../../assets/imgs/loginPic.png" width="100%"></div>
+    <button ion-button icon-left round outline class="bg-02 color-02 bc-01 btn-around" (click)="gocallerloc()"> 
+      <ion-icon class="icon-left"><img src="../../assets/imgs/ionic-03.png" width="18px"></ion-icon>
+      <P id="countryname">Australia +61</P>
+    </button>
+    <div ion-button round class="bg-02 bc-01 color-01 btn-around log-item"> 
+      <input type="tel" [(ngModel)]="userData.email" placeholder="PHONE NUMBER" class="ft-14 color-03 log-input">
+      <ion-icon name="phone-portrait" class="color-01 log-ion"></ion-icon>
+    </div>
+    <div ion-button round class="bg-02 bc-01 log-item">
+      <input type="tel" maxlength="4" [(ngModel)]="userData.password" placeholder="SMS CODE" class="ft-14 color-03 log-input" style="width:50%;">
+      <div (click)="createCode()" class="btn-getcode" style="width:100px;position: absolute;right: 0;">{{codeButtonValue}}</div>
+    </div>
+    <button ion-button round class="bg-01 mt-10" (click)="login()">
+      LOGIN
+    </button>
+  </div>
+  <div id="protocol_phone" style="visibility: hidden;padding:10% ;">By logging in you agree to Powerbus's <span (click)="openProtocol(1)" class="pbutton_phone">Privacy</span> and <span class="pbutton_phone"  (click)="openProtocol(2)">Using</span> Policy</div>
+</ion-content>
+<!-- <ion-content id="ic_time" style="visibility: visible;">
+    <div id="div_count" style=" width: 30px; height: 30px; text-align: right; margin-right: 10dp; margin-top: 5%; position: relative;">{{timerads}}</div>
+</ion-content> -->

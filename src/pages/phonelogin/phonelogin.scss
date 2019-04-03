@@ -1,0 +1,27 @@
+page-phonelogin {
+    /* iphone X */
+    @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+        .loginbox{
+          margin-top: 30%;
+       }
+      }
+      /* iphone XR */
+    @media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+        .loginbox{
+            margin-top: 30%;
+         }
+     }
+    input {
+        color:black !important;
+    }
+    #protocol_phone{
+        margin-top:5%;
+        text-align: center;
+        color: rgba(0,0,0,0.7) !important;
+
+    }
+    .pbutton_phone{
+        color:#515F47;
+        text-decoration: underline;;
+    }
+}

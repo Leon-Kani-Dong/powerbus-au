@@ -1,0 +1,39 @@
+<!--
+  Generated template for the PhoneregisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+    <ion-navbar hideBackButton="true">
+      <ion-title class="txt-c">
+        <div class="tit-name color-12 ft-16" style="display:inline-block;">Bind Phone</div> 
+      </ion-title>
+     
+    </ion-navbar>
+  
+  </ion-header>
+<ion-content padding>
+  
+  <div class="loginbox">
+    <p class="login-tit color-02">PhoneBinding</p>
+    <button ion-button icon-left round outline class="bg-02 color-02 bc-01 btn-around" (click)="gocallerloc()"> 
+      <ion-icon class="icon-left"><img src="../../assets/imgs/ionic-03.png" width="18px"></ion-icon>
+      <P id="countryname">Australia +61</P>
+    </button>
+
+    <div ion-button round class="bg-02 bc-01 color-01 btn-around log-item"> 
+      <input type="tel" [(ngModel)]="userData.email"  placeholder="PHONE NUMBER" class="ft-14 color-03 log-input">
+      <ion-icon name="phone-portrait" class="color-01 log-ion"></ion-icon>
+    </div>
+    <div ion-button round class="bg-02 bc-01 log-item">
+      <input type="tel" maxlength="4" [(ngModel)]="userData.password" placeholder="SMS CODE" class="ft-14 color-03 log-input" style="width:50%;">
+      <div (click)="createCode()" class="btn-getcode" style="width:100px;position: absolute;right: 0;">{{codeButtonValue}}</div>
+    </div>
+    <button ion-button round class="bg-01 mt-10" (click)="bind()">
+      Bind
+    </button>
+  </div>
+</ion-content>

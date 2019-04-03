@@ -1,0 +1,64 @@
+<!--
+  Generated template for the OrderhistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title >
+      <div class="color-01">HISTORY</div> 
+    </ion-title>  
+    <ion-icon name="close" class="btn-close pointer  color-01" (click)="goback()"></ion-icon>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <!-- 无订单记录  背景提示 -->
+  <div class="history-none" style="display:none;" id="notrac">
+    <img src="../../assets/imgs/nocard.jpg"  width="50px !important" height="50px">
+    <P class="ft-16 color-16 txt-c">You haven’t rent any Power Bank yet.<br>
+        Start charging!</P>
+  </div>
+  <!--  订单记录 -->
+  <ion-card class="color-01" *ngFor="let item of transcations">
+      <ion-card-header>
+          <div class="statusleft">
+              <div class="iconborder" ><ion-icon name="{{item.status=='5'?'ios-flash':'md-checkmark-circle-outline'}}" class="ft-16"></ion-icon></div>
+          </div>
+          <!-- <ion-icon name="md-help" class="color-01" (click)="feedback()"></ion-icon> -->
+      </ion-card-header>
+      <ion-card-content style="border-top: 1px solid #ccc;">
+        <div class="listbar ft-14 color-01">
+          <div>Order ID:201910{{item.id}}</div>
+          <div>COST: ${{item.amount}}</div>
+        </div>
+        <div class="listbar ft-12 color-01">
+          <div>Powerbank ID:{{item.powerBank}}</div>
+          <div></div>
+        </div>
+        <div class="placeinfo">
+          <div class="placeinfo-bar">
+            <div class="placeinfo-bar-left">
+               <img src="../../assets/imgs/ionic-05.png" class="w-50per mt-4">
+            </div>
+            <div class="placeinfo-bar-right">
+              <P class="ft-14 address-info color-01">{{item.borrow_shop}}</P>
+              <P class="ft-12 color-01">{{item.startTime}}</P>
+            </div>
+          </div>
+          <div class="placeinfo-bar">
+              <div class="placeinfo-bar-left">
+                 <img src="../../assets/imgs/ionic-05.png" class="w-50per mt-4">
+              </div>
+              <div class="placeinfo-bar-right">
+                <P class="ft-14 address-info color-01">{{item.return_shop}}</P>
+                <P class="ft-12 color-01">{{item.endTime}}</P>
+              </div>
+            </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+   
+</ion-content>

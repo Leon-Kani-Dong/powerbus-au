@@ -1,0 +1,84 @@
+<!--
+  Generated template for the RentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <div class="toolbar-box">
+      <div class="toolbar-top">
+        <!-- <ion-icon name="md-menu" class="color-05 ft-30"></ion-icon> -->
+        <h3 class="color-05">PowerBus</h3>
+        <ion-icon name="ios-headset-outline" class="color-05 ft-30"></ion-icon>     
+      </div>
+
+      <!-- alertbar 提示栏      start！！！
+          1、alertbar news （未租借  为默认状态 显示提示信息）
+
+          2、alertbar （租借状态  显示租借信息）
+      -->
+      <button ion-button round class="alertbar news color-05 ft-12 bg-02 full-w ">There aer about 37 stations roumd you.</button>
+      <button ion-button round class="color-05 bg-02 full-w m-n h-35">
+        <div class="alertbar ft-14 full-h full-w">
+          <div>In Progress:</div>
+          <div><ion-icon name="ios-stopwatch-outline" class="color-05"></ion-icon>&ensp;01h22m</div>
+          <div><ion-icon name="ios-folder-open-outline" class="color-05"></ion-icon>&ensp;$2</div>
+        </div>
+      </button>
+      <!--  alertbar   end！！   -->
+  </div>
+
+  <!--  首页中部  广告  start！ -->
+  <div class="pricebox bg-02" *ngIf="priceHide" (click)="BoxHide()">
+    <div class="ad-area">
+      <P class="ft-16 txt-c color-17">Pricing</P>
+      <div class="priceinfo">
+        <div class="w-50per txt-c">
+          <img src="../../assets/imgs/ionic-18.png" width="17">
+          <P class="ft-14 m-n color-18">$1/Hour</P>
+        </div>
+        <div class="w-50per txt-c">
+          <img src="../../assets/imgs/ionic-19.png" width="17">
+          <P class="ft-14 m-n color-18">$4/Day</P>
+        </div>
+      </div>
+      <P class="ft-10 color-18 p-n-20 mb-15">* We will charge your account balance for renting at $1 per hour,
+          capped at $4 per day and $16 per power bank. In case balance
+          reaches $0, remaining will be charged to your linked card.
+      </P>
+    </div>
+    <!-- <ion-icon name="close-circle" class="mt-10 ft-30 color-07" (click)="BoxHide()"></ion-icon> -->
+  </div>
+  <!--  首页中部  广告  end！ -->
+
+<!--  租借时  弹出租借动画  start！ -->
+<div class="alertbox bg-02" *ngIf="rentHide" (click)="rentShow()">
+  <div class="ad-area">
+    <img src="../../assets/imgs/ionic-20.gif">
+    <P class="ft-12 color-19">TAKE YOUR POWER BANK</P>
+  </div>
+</div>
+<!--   租借时  弹出租借动画  end！ -->
+
+
+  <!--  底部功能条  -->
+  <div class="toolar-bottom">
+    <button ion-button class="btn-sm bg-02 p-n m-n"><ion-icon name="ios-pin-outline" class="color-05 ft-16"></ion-icon></button>
+    <button icon-button round class="ft-12 bg-01 color-06 h-35 br-25 w-70per" (click)="rentShow()">RENT</button>
+    
+    <!--  右侧功能按钮  -->
+    <div class="btn-box">
+        <ion-fab right bottom class="btn-main">
+            <button ion-fab class="ft-14 color-01 bg-02 btn-sm"><ion-icon name="add" class="ft-14"></ion-icon></button>
+            <ion-fab-list side="top" style="display:flex;min-width:25px;">
+              <button ion-fab class="btn-sm" (click)="gostorelist()"><ion-icon name="ios-home-outline" class="ft-16"></ion-icon></button>
+              <button ion-fab class="btn-sm" (click)="goorderhistory()"><ion-icon name="list"class="ft-16"></ion-icon></button>
+              <button ion-fab class="btn-sm" (click)="gowallet()"><ion-icon name="ios-folder-open-outline" class="ft-16"></ion-icon></button>
+              <button ion-fab class="btn-sm" (click)="logout()"><ion-icon name="ios-power" class="ft-16"></ion-icon></button>
+            </ion-fab-list>
+        </ion-fab>
+    </div>
+  </div>
+  <div id="mapa"></div>
+</ion-content>
+

@@ -1,0 +1,15 @@
+page-orderhistory {
+    ion-card-header{
+        display: flex;
+    }
+    .history-none{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 30%;
+            img{
+
+            }
+       }
+}

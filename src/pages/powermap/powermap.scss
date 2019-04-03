@@ -1,0 +1,142 @@
+page-powermap {
+    // .cross{
+    //     display: inline-block;
+    //     transform: rotate(-45deg);
+    // }
+    .using-bottom{
+        align-items: center!important;
+    }
+    .using-bottom button{
+        display: inline-block !important;
+    }
+    .btn-sm-using1{
+
+        margin-bottom: 4px!important;
+        margin-left: 3%!important;
+        margin-right: 2%!important;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        background-image: url("../../assets/imgs/button-circle.png")
+      }
+    .btn-sm-using2{
+        margin-bottom: 4px!important;
+        margin-left: 2%!important;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        background-image: url("../../assets/imgs/button-circle.png")
+      }
+      //5s
+      @media only screen 
+      and (min-device-width : 320px) 
+      and (max-device-height : 568px) 
+      and (orientation : portrait) { 
+        .btn-sm-using1{
+
+            margin-bottom: 4px!important;
+            margin-left: 5px!important;
+            margin-right: 3px!important;
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 50% !important;
+            background-image: url("../../assets/imgs/button-circle.png")
+          }
+        .btn-sm-using2{
+            margin-bottom: 4px!important;
+            margin-left: 3px!important;
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 50% !important;
+            background-image: url("../../assets/imgs/button-circle.png")
+          }
+      }
+    .btn-sm{
+        background-image: url("../../assets/imgs/button-circle.png")
+    }
+    .toolbar-box{
+        background-image: url("../../assets/imgs/smooth-x.png");
+        background-size: 120%;
+    }
+        /* iphone X */
+        @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            .toolbar-box{
+                background-image: url("../../assets/imgs/smooth.png");
+                background-size: 119.7%;
+            }
+          }
+          /* iphone XR */
+        @media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+            .toolbar-box{
+                background-image: url("../../assets/imgs/smooth.png");
+                background-size: 119%;
+            }
+         }
+    .toolbar-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: maxmal;
+        h3{
+            @media (max-width:320px) {
+                margin: 0 !important;
+            }
+            
+        }
+    }
+    ion-content{
+        padding-bottom: 40px !important;
+        // margin-bottom: 40px !important;
+         //margin-top: -40px !important;
+    }
+#map{
+    margin-top: -17px !important;
+}
+    .addnum{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        button{
+            width: 30%;
+            border-color:#9da695;
+            height:34px;
+            font-weight: bold;
+            border-radius: 20px;
+            color: #515f47;
+            font-size: 18px;
+            background-color: #fff !important;
+            @media (max-width:320px) {
+                width: 30%;
+                font-size: 16px;
+            }
+        }
+        button:hover{
+            border-width: 1px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #515f47 !important;
+            @media (max-width:320px) {
+                font-size: 18px;
+            }
+        }
+        button:active , button:visited , button:hover{
+            background-color: #515f47 !important;
+        }
+
+    }
+
+    .usinginfo{
+        display: flex;
+        justify-content: space-around;
+
+        div{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
